@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ManagementQR</string>
+    <string name="btn_accept">btn_accept</string>
+    <string name="lb_pass">lb_pass</string>
+    <string name="user">user</string>
+    <string name="title">title</string>
+</resources>
