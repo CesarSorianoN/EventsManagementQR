@@ -92,4 +92,22 @@ public class MainActivity extends AppCompatActivity {
 
         return intent;
     }
+     
+      public User existsUser(String email) {
+        User user = null;
+        return user;
+    }
+     
+      public void sendEmailUserActivated(String name) {
+        String subject = "Un usuario se ha activado en EventsManagementQR!";
+        String description = "El usuario " + name + " se ha activado en EventsManagementQR.\n Con cariño, los del proyecto móvil.";
+        try{
+            GMailSender sender = new GMailSender("eventsmanagementqr", "QReventsIEEE1918");
+            sender.sendMail(subject, description, "eventsmanagementqr@gmail.com", "falfonso@unbosque.edu.co");
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(new RegisterActivity(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        } catch(Exception e) {
+            Log.e("SendMail", e.getMessage(), e);
+        }
+    }
 }
