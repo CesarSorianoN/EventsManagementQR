@@ -77,4 +77,19 @@ public class MainActivity extends AppCompatActivity {
 
         return null;
     }
+     
+     
+      public Intent login(String email, String password) {
+        User user = existsUser(email);
+        Intent intent = null;
+        if(user.getId_user_type() == 0) {
+            if(user.getPassword().equals(password)) {
+                intent = new Intent(LoginActivity.class, ChangePasswordActivity.class);
+                intent.putExtra("email", email);
+                sendEmailUserActivated(user.getName_user());
+            }
+        }
+
+        return intent;
+    }
 }
